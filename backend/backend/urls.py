@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
 from workload import views  # Replace 'some_view' with your actual view function/class
 
 
