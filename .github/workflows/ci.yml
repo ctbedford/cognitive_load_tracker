@@ -23,4 +23,4 @@ jobs:
       - name: Run tests
         run: |
           source venv/bin/activate
-          python manage.py test  # Adjust the command to run your tests
+          python backend/manage.py test  # Adjust the command to run your tests
