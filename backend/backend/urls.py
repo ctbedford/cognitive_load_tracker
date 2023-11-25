@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from workload.views import task_list  # Replace 'some_view' with your actual view function/class
+from workload import views  # Replace 'some_view' with your actual view function/class
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tasks/', task_list, name='task-list'),
+    path('tasks/', views.task_list, name='task-list'),
 ]
