@@ -12,15 +12,15 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version: '3.x' # Replace 'x' with the specific minor version you need
 
       - name: Install dependencies
         run: |
-          pip install pipenv
-          pipenv install --dev --deploy
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt  # Assumes you have a requirements.txt file at the root
 
       - name: Run tests
         run: |
-          pipenv run python manage.py test
-
-    # Add additional steps for building the Docker image, pushing to a registry, and deploying
+          source venv/bin/activate
+          python manage.py test  # Adjust the command to run your tests
